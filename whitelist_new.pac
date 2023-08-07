@@ -6233,7 +6233,6 @@ var white_domains = {
 "optaim":1,
 "or58":1,
 "oranpage":1,
-"oray":1,
 "ordosggzyjy":1,
 "orgcc":1,
 "orsoon":1,
