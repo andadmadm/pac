@@ -3,11 +3,23 @@ var nowall_proxy = "DIRECT;";
 var direct = "DIRECT;";
 var ip_proxy = "DIRECT;";
 
+
+var ziy_black_domains = {
+"org":{
+"mozilla":1
+}
+};
+
+var ziy_white_domains = {
+"win":{
+"windsys":1
+}
+};
+
+
 var white_domains = {
 "club":{
 "xhup":1
-},"win":{
-"windsys":1
 },"live":{
 "lanjing":1,
 "zhuafan":1,
