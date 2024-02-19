@@ -4,12 +4,10 @@ var direct = "DIRECT;";
 var ip_proxy = "DIRECT;";
 
 
-var ziy_black_domains = {  
-  "org": {  
-    "mozilla": {  
-      "addons": 1  
-    }  
-  }  
+var ziy_black_domains = {
+"org":{
+"mozilla":1
+}
 };
 
 var ziy_white_domains = {
