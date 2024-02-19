@@ -13,9 +13,6 @@ var ziy_black_domains = {
 };
 
 var ziy_white_domains = {
-"win":{
-"windsys":1
-}
 };
 
 
