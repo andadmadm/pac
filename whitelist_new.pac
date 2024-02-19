@@ -10415,6 +10415,12 @@ function isInDomains(domain_dict, host) {
 function FindProxyForURL(url, host) {
 	url=""+url;
 	host=""+host;
+	if ( isPlainHostName(host) === true ) {
+		return direct;
+	}
+	if ( check_ipv4(host) === true ) {
+		return getProxyFromDirectIP(host);
+	}
 	if ( isInDomains(white_domains, host) === true ) {
 		return nowall_proxy;
 	}
