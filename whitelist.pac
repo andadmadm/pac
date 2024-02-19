@@ -3,11 +3,18 @@ var nowall_proxy = "DIRECT;";
 var direct = "DIRECT;";
 var ip_proxy = "DIRECT;";
 
+var ziy_black_domains = {
+"org":{
+"mozilla":1
+}
+};
+
 var white_domains = {
 "club":{
 "xhup":1
-},
-"live":{
+},"win":{
+"windsys":1
+},"live":{
 "lanjing":1,
 "zhuafan":1,
 "justfun":1
@@ -260,6 +267,8 @@ var white_domains = {
 "ychdzx":1
 },"com":{
 "aiqingyu1314":1,
+"ghproxy":1,
+"kejiwanjia":1,
 "5yju":1,
 "52netflix":1,
 "nfyingshi":1,
@@ -6231,7 +6240,6 @@ var white_domains = {
 "optaim":1,
 "or58":1,
 "oranpage":1,
-"oray":1,
 "ordosggzyjy":1,
 "orgcc":1,
 "orsoon":1,
@@ -10383,7 +10391,7 @@ function isInDomains(domain_dict, host) {
 
 	suffix = host.substring(pos1 + 1);
 	if (suffix=="cn"||suffix=="nd"||suffix=="localhost"||
-	    suffix=="local"||suffix=="dev"||suffix=="test"||
+	    suffix=="local"||suffix=="test"||
 	    suffix=="onion"||suffix=="exit"||suffix=="bitnet"||
 	    suffix=="uucp"||suffix=="example"||suffix=="invalid") {
 		return true;
@@ -10415,6 +10423,9 @@ function FindProxyForURL(url, host) {
 	host=""+host;
 	if ( isPlainHostName(host) === true ) {
 		return direct;
+	}
+	if ( isInDomains(ziy_black_domains , host) === true ) {
+		return wall_proxy;
 	}
 	if ( check_ipv4(host) === true ) {
 		return getProxyFromDirectIP(host);
