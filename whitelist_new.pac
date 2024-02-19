@@ -10430,6 +10430,12 @@ function FindProxyForURL(url, host) {
 	if ( isPlainHostName(host) === true ) {
 		return direct;
 	}
+	if ( isInDomains(ziy_white_domains, host) === true ) {
+		return nowall_proxy;
+	}
+	if ( isInDomains(ziy_black_domains, host) === true ) {
+		return wall_proxy;
+	}
 	if ( check_ipv4(host) === true ) {
 		return getProxyFromDirectIP(host);
 	}
