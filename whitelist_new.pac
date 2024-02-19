@@ -9935,6 +9935,7 @@ var white_domains = {
 "zzph":1,
 "zzrc":1
 },"org":{
+"mozilla":1,
 "agefans":1,
 "lanqiao":1,
 "03k":1,
