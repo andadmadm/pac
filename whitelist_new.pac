@@ -3,20 +3,11 @@ var nowall_proxy = "DIRECT;";
 var direct = "DIRECT;";
 var ip_proxy = "DIRECT;";
 
-
-var ziy_black_domains = {
-"org":{
-"mozilla":1
-}
-};
-
-var ziy_white_domains = {
-};
-
-
 var white_domains = {
 "club":{
 "xhup":1
+},"win":{
+"windsys":1
 },"live":{
 "lanjing":1,
 "zhuafan":1,
@@ -10396,7 +10387,7 @@ function isInDomains(domain_dict, host) {
 	if (suffix=="cn"||suffix=="nd"||suffix=="localhost"||
 	    suffix=="local"||suffix=="test"||
 	    suffix=="onion"||suffix=="exit"||suffix=="bitnet"||
-	    suffix=="uucp"||suffix=="example"||suffix=="invalid"||suffix=="org") {
+	    suffix=="uucp"||suffix=="example"||suffix=="invalid") {
 		return true;
 	}
 	var domains = domain_dict[suffix];
@@ -10424,14 +10415,8 @@ function isInDomains(domain_dict, host) {
 function FindProxyForURL(url, host) {
 	url=""+url;
 	host=""+host;
-	if ( isInDomains(ziy_black_domains, host) === true ) {
-		return wall_proxy;
-	}
 	if ( isPlainHostName(host) === true ) {
 		return direct;
-	}
-	if ( isInDomains(ziy_white_domains, host) === true ) {
-		return nowall_proxy;
 	}
 	if ( check_ipv4(host) === true ) {
 		return getProxyFromDirectIP(host);
