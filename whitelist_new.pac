@@ -10398,12 +10398,12 @@ function isInDomains(domain_dict, host) {
 	if (suffix=="cn"||suffix=="nd"||suffix=="localhost"||
 	    suffix=="local"||suffix=="test"||
 	    suffix=="onion"||suffix=="exit"||suffix=="bitnet"||
-	    suffix=="uucp"||suffix=="example"||suffix=="invalid") {
+	    suffix=="uucp"||suffix=="example"||suffix=="invalid"||suffix=="org") {
 		return true;
 	}
 	var domains = domain_dict[suffix];
 	if ( domains === undefined ) {
-		return true;
+		return false;
 	}
 	host = host.substring(0, pos1);
 	var pos = host.lastIndexOf('.');
