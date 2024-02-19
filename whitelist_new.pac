@@ -10403,7 +10403,7 @@ function isInDomains(domain_dict, host) {
 	}
 	var domains = domain_dict[suffix];
 	if ( domains === undefined ) {
-		return false;
+		return true;
 	}
 	host = host.substring(0, pos1);
 	var pos = host.lastIndexOf('.');
